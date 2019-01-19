@@ -20,7 +20,7 @@ require('./models/url.model');
 require('./routes/url.routes')(app);
 
 // global variables
-const PORT = 7000;
+const PORT = process.env.PORT;
 const mongoURI = process.env.DB_URI;
 const connectOptions = {
   keepAlive: true,
