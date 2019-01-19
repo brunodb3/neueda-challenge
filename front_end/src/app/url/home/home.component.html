@@ -1,0 +1,40 @@
+<mat-card class="urls-card">
+  <mat-card-header>
+    <mat-card-title>Neueda Challenge</mat-card-title>
+    <mat-card-subtitle>URL Shortener Solution</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form id="url-form" [formGroup]="urlForm">
+      <mat-form-field class="full-width">
+        <input matInput #url minLength="1" maxlength="256" placeholder="https://your-url.com" formControlName="url">
+        <mat-hint align="start">
+          <strong>Type the target URL to shorten</strong>
+        </mat-hint>
+      </mat-form-field>
+
+      <button class="full-width form-button" mat-flat-button color="primary" (click)="submitUrl(url.value)" [disabled]="!urlForm.valid">Shorten</button>
+    </form>
+
+  </mat-card-content>
+
+</mat-card>
+
+<mat-card class="urls-card">
+  <mat-card-header>
+    <mat-card-title>Your URLs</mat-card-title>
+    <mat-card-subtitle>Click on any of them to copy to clipboard</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let url of shortenedUrls" (click)="copyUrl(url.shortUrl)">
+        <h3 matLine> {{ url.originalUrl }}</h3>
+        <p matLine>
+          <span> {{ url.shortUrl }} </span>
+        </p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,24 @@
+{
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Bruno Duarte Brito",
+  "name": "neueda_challenge_server",
+  "description": "Custom URL shortener",
+  "keywords": [
+    "neueda",
+    "url",
+    "shortener"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.5",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9"
+  }
+}
