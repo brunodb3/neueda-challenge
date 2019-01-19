@@ -44,7 +44,7 @@ module.exports = app => {
     const { originalUrl } = req.body;
 
     if (!validUrl.isUri(originalUrl)) {
-      return res.status(401).json('Invalid Original URL');
+      return res.status(401).json({ error: 'Invalid URL' });
     }
 
     try {
@@ -70,7 +70,7 @@ module.exports = app => {
 
       return res.status(200).json(newItem);
     } catch (err) {
-      return res.status(401).json('Error getting URL');
+      return res.status(401).json({ error: 'Error getting URL' });
     }
   });
 };

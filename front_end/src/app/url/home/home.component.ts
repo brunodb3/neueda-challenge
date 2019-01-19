@@ -25,6 +25,7 @@ export class HomeComponent {
   public shortenedUrls = [];
   public urlForm: FormGroup;
   private componentName = 'home';
+  private urlRegex = 'https?://.+';
 
   constructor(
     public meta: Meta,
@@ -37,7 +38,7 @@ export class HomeComponent {
   ) {
     // creating the url form validation group
     this.urlForm = formBuilder.group({
-      url: ['', [Validators.required, Validators.minLength(1)]]
+      url: ['', [Validators.required, Validators.minLength(1), Validators.pattern(this.urlRegex)]]
     });
 
     // adding title
@@ -86,7 +87,7 @@ export class HomeComponent {
       },
       response => {
         // showing snackbar notification
-        this.snackBar.open(response.error.message);
+        this.snackBar.open(response.error);
       }
     );
   }

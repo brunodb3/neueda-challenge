@@ -10,6 +10,8 @@ Consists in solving the front-end challenge presented by Neueda for new develope
 
 This project was built using Angular 7 (hosted on Firebase Hosting) for the front-end and NodeJS + MongoDB (hosted on Heroku and mLab) for the back-end. There's a separate folder the projects, each containing their own `README.md` file.
 
+As the domain-name used in my back-end application is too big (I'm using a free Heroku dyno, with no custom domain), the shortened URL will most likely end up larger than the original. This should be solved with a smaller domain name.
+
 ## Live Demo
 
 To see a live demo of this project, go to [neueda-challenge.firebaseapp.com](https://neueda-challenge.firebaseapp.com)
